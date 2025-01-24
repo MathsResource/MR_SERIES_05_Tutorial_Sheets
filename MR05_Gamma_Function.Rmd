@@ -1,0 +1,117 @@
+
+
+%%-- http://sites.science.oregonstate.edu/~kovchegy/math563fall2013/SolHW4.pdf
+
+%%%%%%%%%%%%%%%%%%%%%%
+
+%%- Question 66. 
+
+\noindent The gamma function $\Gamma(\alpha )$ is defined as
+\[\Gamma(\alpha ) = \int^{\infty}_{0} e^{-y} \; y^{\alpha-1} dy\]
+for all $\alpha  > 0$. 
+
+\noindent Use integration by parts to prove that $\Gamma(\alpha  + 1) = \alpha \Gamma(\alpha )$.\\
+\noindent Compute $\Gamma(1)$
+and show that $\Gamma(k) = (k  - 1)!$ for all positive integer $k$.
+
+
+\begin{framed}
+\noindent The gamma function (represented by $\Gamma$, the capital letter gamma from the Greek alphabet) is one commonly used extension of the factorial function to complex numbers. 
+The gamma function is defined for all complex numbers except the non-positive integers. For any positive integer n,
+
+\[{\displaystyle \Gamma (n)=(n-1)!\ .}\]
+For complex numbers with a positive real part, the gamma function is defined via a convergent improper integral:
+
+\[{\displaystyle \Gamma (z)=\int _{0}^{\infty }x^{z-1}e^{-x}\,dx,\ \qquad \Re (z)>0\ .}\]
+
+\end{framed}
+\newpage
+
+\subsection*{Solution}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+Let's tackle this step-by-step!
+
+### Proving $\Gamma(\alpha + 1) = \alpha \Gamma(\alpha)$
+
+We start with the definition of the gamma function:
+\[ \Gamma(\alpha) = \int_{0}^{\infty} e^{-y} y^{\alpha - 1} \, dy \]
+
+To prove that $\Gamma(\alpha + 1) = \alpha \Gamma(\alpha)$, we use integration by parts. Let:
+\[ u = y^{\alpha} \quad \text{and} \quad dv = e^{-y} \, dy \]
+
+Then:
+\[ du = \alpha y^{\alpha - 1} \, dy \quad \text{and} \quad v = -e^{-y} \]
+
+Using integration by parts:
+\[ \int_{0}^{\infty} e^{-y} y^{\alpha} \, dy = uv \Big|_{0}^{\infty} - \int_{0}^{\infty} v \, du \]
+
+Evaluating the boundary terms:
+\[ uv \Big|_{0}^{\infty} = \left[ -y^{\alpha} e^{-y} \right]_{0}^{\infty} = 0 - 0 = 0 \]
+
+So we have:
+\[ \int_{0}^{\infty} e^{-y} y^{\alpha} \, dy = - \int_{0}^{\infty} (-e^{-y}) \alpha y^{\alpha - 1} \, dy \]
+\[ = \alpha \int_{0}^{\infty} e^{-y} y^{\alpha - 1} \, dy \]
+\[ = \alpha \Gamma(\alpha) \]
+
+Thus:
+\[ \Gamma(\alpha + 1) = \alpha \Gamma(\alpha) \]
+
+### Computing $\Gamma(1)$
+
+Using the definition:
+\[ \Gamma(1) = \int_{0}^{\infty} e^{-y} y^{1 - 1} \, dy = \int_{0}^{\infty} e^{-y} \, dy \]
+
+This integral evaluates to:
+\[ \Gamma(1) = \left[ -e^{-y} \right]_{0}^{\infty} = 0 - (-1) = 1 \]
+
+### Showing $\Gamma(k) = (k - 1)!$ for all positive integer $k$
+
+We use induction to prove this. We've already shown that $\Gamma(1) = 0! = 1$.
+
+Assume $\Gamma(k) = (k - 1)!$ for some positive integer $k$. Then:
+\[ \Gamma(k + 1) = k \Gamma(k) \]
+\[ = k (k - 1)! \]
+\[ = k! \]
+
+Thus, by induction, $\Gamma(k) = (k - 1)!$ for all positive integers $k$.
+
+Does this help clarify things?
+
+
+
+\begin{framed}
+\noindent \textbf{Integration by Parts}
+\[\int udv = uv -\int vdu\]
+
+\begin{itemize}
+\item $u = y^{\alpha}$
+\item $\frac{du}{dy} = \frac{d}{dy}\left(y^{\alpha}\right)=\alpha y^{\alpha-1}$
+\item $ dv = e^{-y} dy$
+\item $ v =\int \:e^{-y}dy=-e^{-y}+C$
+\end{itemize}
+
+\end{framed}
+\begin{eqnarray*}
+\Gamma(\alpha  + 1) &=&   \int^{\infty}_{0} e^{-y} \; y^{\alpha} dy\\
+& & \\
+&=&   \left[ -e^{-y} \; y^{\alpha} \right]^{\infty}_{0} +  \int^{\infty}_{0} \alpha y^{\alpha-1} e^{-y} dy\\
+& & \\
+&=&   \left[ -e^{-y} \; y^{\alpha} \right]^{\infty}_{0} +  \alpha \int^{\infty}_{0}   e^{-y} y^{\alpha-1} dy\\
+& & \\
+&=&   0  +  \alpha \int^{\infty}_{0}   e^{-y} y^{\alpha-1} dy\\
+& & \\
+&=& \alpha \Gamma(\alpha )  \\
+\end{eqnarray*}
+
+\noindent Thus $\Gamma (2) = 1 \times \Gamma (1) = 1!$, $\Gamma (3) = 2 \times \Gamma (2) = 2!$ and by induction, $\Gamma (k) = (k  - 1)!$ for
+all positive integer $k$.
+
+\newpage
+
+
+%%%%%%%%%%%%%%%%%%
+\end{document}
