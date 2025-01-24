@@ -1,0 +1,61 @@
+%%- http://webpages.iust.ac.ir/matashbar/teaching/schaum_probability.pdf
+
+%%-- PAge 287
+%%-- 9.3
+
+
+
+
+\usepackage{vmargin}
+% left top textwidth textheight headheight
+% headsep footheight footskip
+\setmargins{2.0cm}{2.5cm}{16 cm}{22cm}{0.5cm}{0cm}{1cm}{1cm}
+\renewcommand{\baselinestretch}{1.3}
+
+\setcounter{MaxMatrixCols}{10}
+
+\begin{document}
+\large 
+\subsection*{THE M/M/1 QUEUEING SYSTEM }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+\begin{itemize}
+    \item In the \textbf{M/M/1} queueing system, the arrival process is the Poisson process with rate $\lambda$ (the mean 
+arrival rate) and the service time is exponentially distributed with parameter $\mu$ (the mean service rate). 
+\item Then the process $N(t)$ describing the state of the M/M/1 queueing system at time $t$ is a birth-death 
+process with the following state independent parameters:
+\begin{eqnarray*}
+a_n &=& \lambda \mbox{where} n\geq 0\\
+d_n &=& \mu   \mbox{where} n\geq 1\\
+\end{eqnarray*}
+\item Then from Eqs. (9.1 0) and (9.1 I), we obtain (Prob. 9.3) 
+
+\[ P_{0} = 1 - \frac{\lambda}{\mu} = 1-p\]
+\[ P_{n} = 1 - \frac{\lambda}{\mu}\left(\frac{\lambda}{\mu}\right)^{n} = (1-\rho)\rho^{n} \]
+
+
+where ${\rho = \frac{\lambda}{\mu} < 1}$ , which implies that the server, on the average, must process the customers faster 
+than their average arrival rate; otherwise the queue length (the number of customers waiting in the 
+queue) tends to infinity. 
+\item The ratio ${\rho = \frac{\lambda}{\mu} }$ is sometimes referred to as the \textbf{traffic intensity} of the system
+\end{itemize}
+
+\newpage 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\[ P_{0} = 1 - \frac{\lambda}{\mu} = 1-p\]
+\[ P_{n} = 1 - \frac{\lambda}{\mu}\left(\frac{\lambda}{\mu}\right)^{n} = (1-\rho)\rho^{n} \]
+
+9.3. Derive Eqs. (9.13) and (9.1 4). 
+Setting $d_n = \lambda$, $d_o = 0$, and $d_n = \mu$ in Eq. (9.1 O), we get 
+\[p_{1}= \frac{\lambda}{\mu} p_{0} = \rho\cdot p_{o} \]
+\[p_{2}= \left(\frac{\lambda}{\mu} \right)^{2}p_{0} = \rho^{2}\cdot p_{o} \]
+
+\[p_{n}= \left(\frac{\lambda}{\mu} \right)^{n}p_{0} = \rho^{n}\cdot p_{o} \]
+where po is determined by equating 
+
+\[\sum^{\infty}_{n=0}p_{n} = p_{0}\sum^{\infty}_{n=0}\rho_{n} = p_{0}\left(\frac{1}{1-\rho} \right) = 1 \] where $\mid\rho\mid < 1 $
+from which we obtain 
+9.4. D
+
+
+\end{document}

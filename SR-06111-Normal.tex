@@ -1,0 +1,86 @@
+
+Example 5.35 
+
+Let $ {\displaystyle X} $ be the number of two-point field goals a basketball player makes in a game, $ {\displaystyle Y} $ the number of three point field goals made, and $ {\displaystyle Z} $ the number of free throws made (worth one point each). 
+
+
+You are givent the following information: 
+\begin{itemize}
+\item $ {\displaystyle X} $, $ {\displaystyle Y} $, $ {\displaystyle Z} $ have standard deviations of 2.5, 3.7, 1.8, respectively,
+\item $ {\displaystyle \textrm{Corr}(X,Y) = 0.1} $, $ {\displaystyle \textrm{Corr}(X, Z) = 0.3} $, $ {\displaystyle \textrm{Corr}(Y,Z) = -0.5} $.
+\end{itemize}
+\begin{enumerate}[(a)]
+\item Find the standard deviation of the number of fields goals in a game (not including free throws)
+\item Find the standard deviation of total points scored on fields goals in a game (not including free throws)
+\item Find the standard deviation of total points scored in a game.
+\end{enumerate}
+
+
+\subsection*{Solution}
+
+\begin{framed}
+The variance of a sum of two random variables is given by
+
+\[{\displaystyle \operatorname {Var} (aX+bY)=a^{2}\operatorname {Var} (X)+b^{2}\operatorname {Var} (Y)+2ab\,\operatorname {Cov} (X,Y),},\]
+\[{\displaystyle 
+\operatorname {Var} (aX-bY)=a^{2}\operatorname {Var} (X)+b^{2}\operatorname {Var} (Y)-2ab\,\operatorname {Cov} (X,Y),}\]
+where ${\displaystyle \operatorname {Cov} (X,Y)}$ is the covariance.
+\end{framed}
+\begin{framed}
+Linear combinations
+In general, for the sum of {\displaystyle N}N random variables {\displaystyle \{X_{1},\dots ,X_{N}\}}\{X_{1},\dots ,X_{N}\}, the variance becomes:
+
+{\displaystyle \operatorname {Var} \left(\sum _{i=1}^{N}X_{i}\right)=\sum _{i,j=1}^{N}\operatorname {Cov} (X_{i},X_{j})=\sum _{i=1}^{N}\operatorname {Var} (X_{i})+\sum _{i\neq j}\operatorname {Cov} (X_{i},X_{j}),}{\displaystyle \operatorname {Var} \left(\sum _{i=1}^{N}X_{i}\right)=\sum _{i,j=1}^{N}\operatorname {Cov} (X_{i},X_{j})=\sum _{i=1}^{N}\operatorname {Var} (X_{i})+\sum _{i\neq j}\operatorname {Cov} (X_{i},X_{j}),}
+se
+\end{framed}
+\end{document}
+%%%%%%%%%%%%%%%%%%%5
+<!-- ## Other moments -->
+<!-- Expected values and variance are summary characteristics of a -->
+<!-- distribution. While these are typically the two most important -->
+<!-- characteristics, there are other summary characteristics like "skewness" -->
+<!-- or "kurtosis". Higher order characteristics of a distribution are -->
+<!-- defined via "moments". -->
+<!-- The $k$**th moment** of $X$ is $\textrm{E}(X^k$). -->
+<!-- The $k$th moment of a RV exists as long as $\textrm{E}(|X|^k)<\infty$. -->
+<!-- Whether or not a certain moment exists depends on how quickly the tails -->
+<!-- of the distribution go to 0. (The tails of a distribution refer to the -->
+<!-- probabilities of values large in magnitude.) -->
+<!-- If the $k$th moment of a distribution exists, then the $j$th moment -->
+<!-- exists for all $j<k$. -->
+<!-- The third moment is related to "skewness", and the fourth moment is -->
+<!-- related to "kurtosis". -->
+<!-- Expected value, variance, and moments are summary characteristics of a -->
+<!-- distribution, so if two random variables have the same distribution then -->
+<!-- they have all the same summary characteristics. Conversely, if for any -->
+<!-- summary characteristic you pick the random variables yield the same -->
+<!-- value, it seems reasonable that they must share the same distribution. -->
+<!-- Unfortunately, it's not enough to just compare (polynomial) moments. -->
+<!-- Random variables $X$ and $Y$ have the same distribution if and only if -->
+<!-- $\textrm{E}[g(X)]=\textrm{E}[g(Y)]$ for all functions $g$ (for which the -->
+<!-- expected values are defined). -->
+<!-- ```{theorem, samedist-thm} -->
+<!-- Random variables $X$ and $Y$ have the same distribution if and only if $\E[g(X)]=\E[g(Y)]$ for all functions $g$ (for which the expected values are defined). -->
+<!-- ``` -->
+<!-- Expected values are summary characteristics of a distribution, so if two random variables have the same distribution then they have all the same summary characteristics.  Conversely, if for any summary characteristic you pick the random variables yield the same value, it seems reasonable that they must share the same distribution. -->
+<!-- ### Infinite or undefined expected values -->
+<!-- There are some random variables for which $\E(X)=\infty$. There are also some random variables for which $\E(X)$ is undefined. -->
+<!-- Technically, we haven't provided a general definition of expected value yet.  For discrete RVs, expected value is defined naturally as the probability-weighted average value. -->
+<!-- \[ -->
+<!-- \E(X) = \sum_x x \IP(X=x) -->
+<!-- \] -->
+<!-- The analogous definition for continuous RVs is: If $X$ is a continuous RV with probability density function $f_X$ -->
+<!-- \[ -->
+<!-- \E(X) = \int_{-\infty}^{\infty} x f_X(x) dx -->
+<!-- \] -->
+<!-- We will study continuous RVs in more detail later. -->
+<!-- The above formulas are the ones generally used to compute expected values.  There is an alternative formula --- \emph{the tail probability formula for expected value} --- that works for both discrete and continuous RVs, provided they do not take negative values. -->
+<!-- \[ -->
+<!-- \text{If $X \ge 0$ then } \E(X) = \int_0^\infty \IP(X\ge x)\, dx -->
+<!-- \] -->
+<!-- The above suggests that it is possible to have RVs with $\E(X)=\infty$ if the tail probabilities $\IP(X\ge x)$ do not converge to 0 fast enough in order for the integral to converge. -->
+<!-- If $X$ can take negative values, it can be written as the difference of its positive and negative parts\footnote{If $x$ is a number, its positive part is $x^{+} = \max(x, 0)$ and its negative part is $x^{-} = -\min(x, 0)$.  For example, if $x=3$ then $x^{+}=3$ and $x^{-}=0$; if $x=-2$ then $x^{+}=0$ and $x^{-}=2$. Note that $x^{-}\ge0$.  Then $x=x^{+}-x^{-}$ and $|x| = x^{+}+x^{-}$. }, $X = X^{+} - X^{-}$.  Since both $X^{+}\ge0$ and $X^{-}\ge 0$, their expected values are given by the tail probability formula.  Then $\E(X)$ is defined to be $\E(X^{+})-\E(X^{-})$, provided that at least one of $\E(X^{+})$ and $\E(X^{-})$ is finite.  If both $\E(X^{+})=\infty$ and $\E(X^{-})=\infty$ then $\E(X)$ is undefined  (since $\infty - \infty$ is undefined.) The most commonly used example for a situation where the expected value is undefined is the Cauchy distribution (a.k.a.\ the $t$-distribution with one degree of freedom). -->
+
+
+
+<!--  -->

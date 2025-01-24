@@ -1,0 +1,56 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+%%- https://gregorygundersen.com/blog/2019/09/16/poisson-gamma-nb/
+
+\begin{document}
+
+           <h1>A Poisson–Gamma Mixture Is Negative-Binomially Distributed</h1>
+            We can view the negative binomial distribution as a Poisson distribution with a gamma prior on the rate parameter. I work through this derivation in detail.</h4>
+
+        \noindent Consider a Poisson model for count data,
+
+<script type="math/tex; mode=display">y \sim \text{Poisson}(\theta), \qquad \theta \geq 0.</script>
+
+\noindent The parameter $\theta$ can be interpreted as the <em>rate of arrivals</em>, and importantly, $\mathbb{E}[y] = \text{Var}(y) = \theta$. An unfortunate property of this Poisson model is that it cannot model <em>overdispersed</em> data or data in which the variance is greater than the mean. This is because Poisson regression has one free parameter. However, if we place a gamma prior on $\theta$,
+
+\begin{align}
+y &\sim \text{Poisson}(\theta)
+\\
+\theta &\sim \text{gamma}\Big(r, \frac{p}{1-p}\Big),
+\end{align} 
+
+\noindent and then marginalize out $\theta$, we get a negative binomial (NB) distribution, which has the useful property that its variance can be greater than its mean. The derivation is
+
+\begin{align}
+p(y)
+&= \int_{0}^{\infty} p(y \mid \theta) p(\theta) \text{d} \theta
+\\\\
+&= \int_{0}^{\infty} \Big( \frac{\theta^{y} e^{-\theta}}{y!} \Big) \Big( \frac{1}{\Gamma(r) \big( \frac{p}{1-p} \big)^r} \theta^{r - 1} e^{-\theta (1-p)/p} \Big) \text{d} \theta
+\\\\
+&= \frac{(1-p)^r p^{-r}}{y! \Gamma(r)} \int_{0}^{\infty} \theta^{r+y-1} e^{-\theta/p} \text{d} \theta
+\\\\
+&\stackrel{\star}{=} \frac{(1-p)^r p^{-r}}{y! \Gamma(r)} p^{r+y} \Gamma(r+y)
+\\\\
+&= \frac{\Gamma(r+y)}{\Gamma(r) y!} p^y (1-p)^r
+\\\\
+&\stackrel{\dagger}{=} \frac{(r+y-1)!}{(r-1)!y!} p^y (1-p)^r
+\\\\
+&= {y+r-1 \choose y} p^y (1-p)^r
+\\\\
+&= \text{NB}(r, p).
+\end{align} 
+\noindent Step $\star$ holds because of the following equality,
+
+<script type="math/tex; mode=display">\int_{0}^{\infty} x^{b} e^{-ax} \text{d}x = \frac{\Gamma(b + 1)}{a^{b+1}}.</script>
+
+\noindent <a href="https://en.wikipedia.org/wiki/Gamma_function#Integration_problems">Wikipedia claims</a> that this is part of the usefulness of the gamma function: integrals of expressions of the form $f(x) e^{-g(x)}$, which model exponential decay, can be sometimes solved in closed form using the above equation.
+
+\noindent Step $\dagger$ uses the fact that $\Gamma(x) = (x - 1)!$.
+
+
+
+
+\section{Introduction}
+
+\end{document}

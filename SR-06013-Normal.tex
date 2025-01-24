@@ -1,0 +1,28 @@
+%%-- https://bookdown.org/kevin_davisross/probsim-book/linear-combinations-of-random-variables.html
+
+<strong>Example 5.29  </strong></span>Recall the Colab activity where you simulated pairs of SAT Math ($ {\displaystyle X} $) and Reading ($ {\displaystyle Y} $) scores from Bivariate Normal distributions with different correlations. You considered the distribution of the sum $ {\displaystyle T=X+Y} $ and difference $ {\displaystyle D= X - Y} $. Did changing the correlation affect the <em>distribution</em> of $ {\displaystyle T} $ of $ {\displaystyle D} $? Did changing the correction affect the <em>expected value</em> of $ {\displaystyle T} $? Of $ {\displaystyle D} $?
+
+<details>
+\subsection*{Solution}
+You should have observed that, yes, changing the correlation affected the distribution of $ {\displaystyle T} $ and $ {\displaystyle D} $ mainly by changing the degree of variability. 
+However, you should have also observed that the expected value of $ {\displaystyle T} $ did not change as the correlation changed (after accounting for simulation margin of error). Similarly, the expected value of $ {\displaystyle D} $ did not change as the correlation changed.
+%%%%%%%%%%%%%%%%%%%5
+<strong>Linearity of expected value.</strong> For <em>any</em> two random variables $ {\displaystyle X} $ and $ {\displaystyle Y} $.
+\begin{equation}\begin{align*}
+\textrm{E}(X + Y) &amp; = \textrm{E}(X) + \textrm{E}(Y)
+\end{align*}\]</span>
+That is, the expected value of the sum is the sum of expected values, regardless of how the random variables are related. Therefore, you only need to know the marginal distributions of $ {\displaystyle X} $ and $ {\displaystyle Y} $ to find the expected value of their sum. (But keep in mind that the <em>distribution</em> of $ {\displaystyle X+Y} $ will depend on the joint distribution of $ {\displaystyle X} $ and $ {\displaystyle Y} $.)
+Linearity of expected value follows from simple arithmetic properties of numbers. Whether in the short run or the long run,
+\begin{equation}\begin{align*}
+\text{Average of $X + Y$ } &amp; = \text{Average of $X$} + \text{Average of $Y$}
+\end{align*}\]</span>
+regardless of the joint distribution of $ {\displaystyle X} $ and $ {\displaystyle Y} $. For example, for the two $ {\displaystyle (X, Y)} $ pairs (4, 3) and (2, 1)
+\begin{equation}
+\text{Average of $X + Y$ } = \frac{(4+3)+(2+1)}{2} = \frac{4+2}{2} + \frac{3+1}{2} = \text{Average of $X$} + \text{Average of $Y$}.
+\]</span>
+A <strong>linear combination</strong> of two random variables $ {\displaystyle X} $ and $ {\displaystyle Y} $ is of the form $ {\displaystyle aX + bY} $ where $ {\displaystyle a} $ and $ {\displaystyle b} $ are non-random constant. Combining properties of linear rescaling with linearity of expected value yields the expected value of a linear combination
+\begin{equation}
+\textrm{E}(aX + bY) = a\textrm{E}(X)+b\textrm{E}(Y)
+\]</span>
+For example, $ {\displaystyle \textrm{E}(X - Y) = \textrm{E}(X) - \textrm{E}(Y)} $. The left side above represents the “long way”: find the distribution of $ {\displaystyle aX + bY} $, which will depend on the joint distribution of $ {\displaystyle X} $ and $ {\displaystyle Y} $, and then use the definition of expected value. The right side is the “short way”: find the expected values of $ {\displaystyle X} $ and $ {\displaystyle Y} $, which only requires their marginal distributions, and plug those numbers into the transformation formula. Similar to LOTUS, linearity of expected value provides a way to find the expected value of certain random variables without first finding the distribution of the random variables.
+Linearity of expected value extends naturally to more than two random variables.

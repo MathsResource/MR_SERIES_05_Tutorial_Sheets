@@ -1,0 +1,70 @@
+ \documentclass[a4paper,12pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{eurosym}
+\usepackage{vmargin}
+\usepackage{amsmath}
+\usepackage{graphics}
+\usepackage{epsfig}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{subfigure}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{framed}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{chngpage}
+%\usepackage{bigints}
+
+\usepackage{vmargin}
+% left top textwidth textheight headheight
+% headsep footheight footskip
+\setmargins{2.0cm}{2.5cm}{16 cm}{22cm}{0.5cm}{0cm}{1cm}{1cm}
+\renewcommand{\baselinestretch}{1.3}
+
+\setcounter{MaxMatrixCols}{10}
+
+\begin{document}
+\large
+\noindent 
+Let \(X_i\) denote the weight of a randomly selected prepackaged one-pound bag of carrots. Of course, one-pound bags of carrots won't weigh exactly one pound. 
+
+In fact, history suggests that \(X_i\) is normally distributed with a mean of 1.18 pounds and a standard deviation of 0.07 pound.
+
+Now, let \(W\) denote the weight of randomly selected prepackaged three-pound bag of carrots. 
+
+Three-pound bags of carrots won't weigh exactly three pounds either. In fact, history suggests that \(W\) is normally distributed with a mean of 3.22 pounds and a standard deviation of 0.09 pound.
+
+Selecting bags at random, what is the probability that the sum of three one-pound bags exceeds the weight of one three-pound bag?
+
+
+\section*{Solution}
+
+Because the bags are selected at random, we can assume that \(X_1, X_2, X_3\) and \(W\) are mutually independent. 
+
+The theorem helps us determine the distribution of \(Y\), the sum of three one-pound bags:
+
+\[Y=(X_1+X_2+X_3) \sim N(1.18+1.18+1.18, 0.07^2+0.07^2+0.07^2)=N(3.54,0.0147)\]
+
+That is, \(Y\) is normally distributed with a mean of 3.54 pounds and a variance of 0.0147. 
+
+Now, \(Y-W\), the difference in the weight of three one-pound bags and one three-pound bag is normally distributed with a mean of 0.32 and a variance of 0.0228, as the following calculation suggests:
+
+\[(Y-W) \sim N(3.54-3.22,(1)^2(0.0147)+(-1)^2(0.09^2))=N(0.32,0.0228)\)\]
+
+\noindent Therefore, finding the probability that \(Y\) is greater than \(W\) reduces to a normal probability calculation:
+
+\begin{eqnarray*} P(Y\geq W) &=& P(Y-W\geq 0)\\ &=&  P\left(Z\geq \dfrac{0-0.32}{\sqrt{0.0228}}\right)\\ &=&  P(Z\geq -2.12)\\ &=& P(Z\leq 2.12)\\ &=& 0.9830\\ \end{eqnarray*}
+
+That is, the probability that the sum of three one-pound bags exceeds the weight of one three-pound bag is 0.9830. 
+
+%%-- Hey, if you want more bang for your buck, it looks like you should buy multiple one-pound bags of carrots, as opposed to one three-pound bag!
+
+\end{document}
+
+      
+          
+                
+                                      
+
+          

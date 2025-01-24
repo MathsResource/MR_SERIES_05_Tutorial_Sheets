@@ -1,0 +1,98 @@
+
+\setcounter{MaxMatrixCols}{10}
+
+\begin{document}
+\large 
+
+
+%%- http://webpages.iust.ac.ir/matashbar/teaching/schaum_probability.pdf
+
+%%-- PAge 287
+%%-- 9.7
+
+Customers arrive at a watch repair shop according to a Poisson process at a rate of one per 
+every 10 minutes, and the service time is an exponential r.v. with mean 8 minutes. 
+\begin{enumerate}
+    \item (a) Find the average number of customers L, the average time a customer spends in the shop 
+W, and the average time a customer spends in waiting for service W,. 
+\item  
+(b) Suppose that the arrival rate of the customers increases 10 percent. Find the corresponding 
+changes in L, W, and W,. 
+\end{enumerate}
+
+
+
+\begin{framed}
+\begin{itemize}
+\item The average number of customers is denoted $L$
+\item The average amount of time that a customer spends waiting for service is denoted $W_q$
+    \item  The ratio ${\rho = \frac{\lambda}{\mu}}$ is the traffic intensity of the system.
+\end{itemize}
+\end{framed}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Solution}
+\subsection*{Part (a)}
+
+(a) The watch repair shop service can be modeled as an M/M/1 queueing system with 1 = &, p = 4. Thus, 
+from Eqs. (9.1 5), (9.1 6), and (9.43), we have 
+1 1 w=-=-- - 40 minutes 
+-A Q-iij 
+W, = W - W, = 40 - 8 = 32 minutes 
+
+\subsection*{Part (b)}
+(b) Now 1 = 4, p = g. Then 
+1 w=- - 1-= 72 minutes 
+p-a +-g 
+W, = W - W, = 72 - 8 = 64 minutes 
+It can be seen that an increase of 10 percent in the customer arrival rate doubles the average number 
+of customers in the system. The average time a customer spends in queue is also doubled.
+
+\end{document}
+
+
+Alright, let's tackle this step by step.
+
+### Part (a)
+
+#### Given:
+- Arrival rate, \( \lambda = 1 \) customer per 10 minutes = 0.1 customers per minute
+- Service rate, \( \mu = \frac{1}{8} \) customers per minute
+
+From the given data, we can model this as an M/M/1 queueing system.
+
+#### Calculations:
+1. **Traffic intensity \( \rho \)**:
+\[ \rho = \frac{\lambda}{\mu} = 0.1 \times 8 = 0.8 \]
+
+2. **Average number of customers in the system \( L \)**:
+\[ L = \frac{\lambda}{\mu - \lambda} = \frac{0.1}{\frac{1}{8} - 0.1} = \frac{0.1}{\frac{1}{8} - \frac{8}{80}} = \frac{0.1}{\frac{1 - 0.8}{8}} = \frac{0.1 \times 8}{0.2} = \frac{0.8}{0.2} = 4 \text{ customers} \]
+
+3. **Average time a customer spends in the system \( W \)**:
+\[ W = \frac{1}{\mu - \lambda} = \frac{1}{\frac{1}{8} - 0.1} = \frac{1}{0.125 - 0.1} = \frac{1}{0.025} = 40 \text{ minutes} \]
+
+4. **Average time a customer spends waiting for service \( W_q \)**:
+\[ W_q = W - \frac{1}{\mu} = 40 - 8 = 32 \text{ minutes} \]
+
+### Part (b)
+
+#### Increased arrival rate:
+- New arrival rate \( \lambda' = 0.1 \times 1.1 = 0.11 \) customers per minute
+
+#### New traffic intensity \( \rho' \):
+\[ \rho' = \frac{\lambda'}{\mu} = 0.11 \times 8 = 0.88 \]
+
+#### New average number of customers in the system \( L' \):
+\[ L' = \frac{\lambda'}{\mu - \lambda'} = \frac{0.11}{\frac{1}{8} - 0.11} = \frac{0.11}{0.125 - 0.11} = \frac{0.11}{0.015} \approx 7.33 \text{ customers} \]
+
+#### New average time a customer spends in the system \( W' \):
+\[ W' = \frac{1}{\mu - \lambda'} = \frac{1}{0.125 - 0.11} = \frac{1}{0.015} \approx 66.67 \text{ minutes} \]
+
+#### New average time a customer spends waiting for service \( W_q' \):
+\[ W_q' = W' - \frac{1}{\mu} = 66.67 - 8 \approx 58.67 \text{ minutes} \]
+
+#### Summary of Changes:
+- **L** increased from 4 to approximately 7.33
+- **W** increased from 40 minutes to approximately 66.67 minutes
+- **W_q** increased from 32 minutes to approximately 58.67 minutes
+
+This demonstrates the impact of a 10% increase in the arrival rate on the queueing system. Let me know if you need further clarification or have any other questions!

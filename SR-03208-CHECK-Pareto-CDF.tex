@@ -1,0 +1,72 @@
+\documentclass[a4paper,12pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{eurosym}
+\usepackage{vmargin}
+\usepackage{amsmath}
+\usepackage{graphics}
+\usepackage{epsfig}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{subfigure}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{framed}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{chngpage}
+%\usepackage{bigints}
+
+\usepackage{vmargin}
+% left top textwidth textheight headheight
+% headsep footheight footskip
+\setmargins{2.0cm}{2.5cm}{16 cm}{22cm}{0.5cm}{0cm}{1cm}{1cm}
+\renewcommand{\baselinestretch}{1.3}
+
+\setcounter{MaxMatrixCols}{10}
+
+\begin{document}
+\large
+
+\noindent Let $a > 0$ be a parameter. Show that the function $F$ given below is a distribution function.
+\[F( x) = 1 -  \frac{1}{x^a} , x \geq 1\]
+
+\begin{framed}
+\[\int^{U}_{L} F(x) dx = 1\]
+\end{framed}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%-- http://math.bme.hu/~nandori/Virtual_lab/stat/special/Pareto.pdf
+\large 
+\begin{eqnarray*}
+\int^{\infty}_{1} 1 - \frac{1}{x^a} dx &=& \int \frac{a}{x^{a+1}} dx\\
+&=&
+\int \frac{a}{x^{a+1}}dx\\
+&=&a\cdot \int \frac{1}{x^{a+1}}dx\\
+&=&a\left(-\frac{x^{-a}}{a}\right)\\
+&=&-\left(x^{-a}\right)+C\\
+\end{eqnarray*}
+\large 
+
+\begin{eqnarray*}
+\int^{\infty}_{1} 1 - \frac{1}{x^a} dx  &=& \left[-\left(x^{-a}\right)\right]^{\infty}_{1} \\
+&=& \left[x^{-a}\right]^{1}_{\infty} \\
+&=& \left(1^{-a}\right) - \left(\infty^{-a}\right) \\
+\end{eqnarray*}
+\newpage 
+
+\begin{itemize}
+    \item 1 to the power of any exponential is simply 1
+    \item $\infty$ to the power of a negative exponential is considered to be equal to zero.
+    
+    
+\end{itemize}
+\[ \infty^{-a} = \frac{1}{\infty^{a}} = 0 \]
+
+\begin{eqnarray*}
+\int^{\infty}_{1} 1 - \frac{1}{x^a} dx &=& 1 -0  = 1
+\end{eqnarray*}
+
+\end{document}

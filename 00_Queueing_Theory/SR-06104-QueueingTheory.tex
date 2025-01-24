@@ -1,0 +1,79 @@
+%%- http://webpages.iust.ac.ir/matashbar/teaching/schaum_probability.pdf
+
+%%-- PAge 287
+%%-- 9.6
+
+9.6. Let \( W_a \) denote the amount of time an arbitrary customer spends in the M/M/1 queueing system. Find the distribution of \( W_a \).
+
+**Solution:**
+
+We have:
+\[ P(W_a \leq a) = P(W_a \leq a \mid n \text{ in the system when the customer arrives}) \times P(n \text{ in the system when the customer arrives}) \]
+where \( n \) is the number of customers in the system.
+
+- Now consider the amount of time \( W_a \) that this customer will spend in the system when there are already \( n \) customers when he or she arrives.
+- When \( n = 0 \), then \( W_a = W_{\text{service}} \), which is the service time.
+- When \( n \geq 1 \), there will be one customer in service and \( n - 1 \) customers waiting in line ahead of the arriving customer.
+- The customer in service might have been in service for some time, but due to the memoryless property of the exponential distribution of the service time, the arriving customer would have to wait an exponential amount of time with parameter \( \mu \) for this customer to complete service.
+- Additionally, the arriving customer would also have to wait an exponential amount of time for each of the other \( n - 1 \) customers in line.
+- Thus, adding his or her own service time, the amount of time \( W_a \) that the customer will spend in the system when there are already \( n \) customers is the sum of \( n + 1 \) i.i.d. exponential random variables with parameter \( \mu \).
+
+Then by Prob. 4.33, we see that this random variable is a gamma random variable with parameters \((n + 1, \mu)\). Thus, by Eq. (2.83),
+\[ P(W_a \leq a \mid n \text{ in the system when customer arrives}) = \Gamma((n + 1, \mu)) \]
+
+From Eq. (9.14),
+\[ P(n \text{ in the system when customer arrives}) = \left(1 - \frac{\lambda}{\mu}\right) \left(\frac{\lambda}{\mu}\right)^n \]
+
+Hence, by Eq. (9.44),
+\[ F_{W_a}(a) = P(W_a \leq a) = \int_0^a \left(1 - \frac{\lambda}{\mu}\right) \left(\frac{\lambda}{\mu}\right)^n dt = \int_0^a (\mu - \lambda) e^{-\mu t} \int_{n=0}^\infty dt = \int_0^a (\mu - \lambda) dt = 1 - e^{-(\mu - \lambda)a} \]
+
+Thus, by Eq. (2.79), \( W_a \) is an exponential random variable with parameter \( \mu - \lambda \). Note that from Eq. (2.99), \( E(W_a) = \frac{1}{\mu - \lambda} \), which agrees with Eq. (9.16), since \( W = E(W_a) \).
+
+---
+
+I hope this helps! If you have any further questions, feel free to ask.
+
+
+
+9.6. Let $W_a$ denote the amount of time an arbitrary customer spends in the M/M/1 queueing system. 
+Find the distribution of $W_a$. 
+\subsection*{Solution}
+\begin{itemize}
+    \item We have 
+03 
+P{ W, I a} = P( W, I a 1 n in the system when the customer arrives} n = 0 
+x P{n in the system when the customer arrives} (9.44) 
+where $n$ is the number of customers in the system. 
+\item Now consider the amount of time W, that this customer 
+will spend in the system when there are already n customers when he or she arrives.
+\item When n = 0, then 
+W, = W,,,,, that is, the service time.
+\item When n 2 1, there will be one customer in service and $n - 1$ customers 
+waiting in line ahead of this customer's arrival. 
+\item The customer in service might have been in service for some 
+time, but because of the memoryless property of the exponential distribution of the service time, it follows 
+that (see Prob. 2.57) the arriving customer would have to wait an exponential amount of time with parameter p for this customer to complete service. 
+\item In addition, the customer also would have to wait an exponential amount of time for each of the other $n - 1$ customers in line. 
+\item Thus, adding his or her own service time, 
+the amount of time W, that the customer will spend in the system when there are already n customers when 
+he or she arrives is the sum of n + 1 iid exponential r.v.'s with parameter p.
+\end{itemize}
+ Then by Prob. 4.33, we see that 
+this r.v. is a gamma r.v. with parameters (n + 1, p). Thus, by Eq. (2.83), 
+P{Wa 5 a I n in the system when customer arrives) = 
+From Eq. (9.1 4), 
+P{n in the system when customer arrives) = pn = 1 - - ( XY 
+\item Hence, by Eq. (9.44), 
+\begin{eqnarray*}
+F_{W_{a}} = P(W_A \eq a) \\
+&=& int^{a}_{0} \left( 1 - \frac{\lambda}{\mu}\right) \left(\frac{\lambda}{\mu}\right)^{n} dt \\
+&=& int^{a}_{0} (\mu-\lambda) e^{-\mu t}\int^{\infty}_{n=0}\frac{}{} dt \\
+&=& int^{a}_{0} (\mu-\lambda)\frac{}{} dt \\
+&=& 1-e^{(\mu-\lambda)a}\\
+\end{eqnarray*}
+
+Thus, by Eq. (2.79), W, is an exponential r-v. with parameter p - 1. 
+\item Note that from Eq. (2.99), E(W,) = 
+1/(p - A), which agrees with Eq. (9.16), since W = E( W,). 
+
+\end{document}

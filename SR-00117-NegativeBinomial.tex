@@ -1,0 +1,101 @@
+
+
+%% -- https://stattrek.com/probability-distributions/negative-binomial.aspx
+
+\documentclass[a4paper,12pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{eurosym}
+\usepackage{vmargin}
+\usepackage{amsmath}
+\usepackage{graphics}
+\usepackage{epsfig}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{subfigure}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{framed}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{chngpage}
+%\usepackage{bigints}
+
+\usepackage{vmargin}
+% left top textwidth textheight headheight
+% headsep footheight footskip
+\setmargins{2.0cm}{2.5cm}{16 cm}{22cm}{0.5cm}{0cm}{1cm}{1cm}
+\renewcommand{\baselinestretch}{1.3}
+
+\setcounter{MaxMatrixCols}{10}
+
+\begin{document}
+\large
+
+
+\noindent Alex is a high school basketball player. He is a 70\% free throw shooter. That means his probability of making a free throw is 0.70. 
+
+\begin{enumerate}[(a)]
+    \item During the season, what is the probability that Alex makes his third free throw on his fifth shot?
+    \item  What is the probability that Alex makes his first free throw on his fifth shot?
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%
+
+\subsection*{Solution}
+\subsection*{Part (a)}
+This is an example of a negative binomial experiment. The probability of success ($p$) is 0.70, the number of trials ($k$) is 5, and the number of successes ($r$) is 3.
+
+\noindent To solve this problem, we enter these values into the negative binomial probability mass function.
+
+\begin{framed}
+\noindent \textbf{Probability Mass Function}
+
+\noindent Suppose a negative binomial experiment consists of $k$ trials and results in $r$ successes. If the probability of success on an individual trial is $p$, then the negative binomial probability is:
+\[
+{\displaystyle f(k;r,p)\equiv \Pr(X=k)={k-1 \choose r-1}\cdot p^{r}(1-p)^{k-r},}\]
+
+\noindent N.B. There are other formulations of the PMF for different scenarios.\\
+
+\end{framed}
+
+
+\begin{eqnarray*}
+P(X=k)  &=& {k-1 \choose r-1} \times p^r \times (i-p)^{k - r}\\
+ &=& {4 \choose 2} \times 0.7^3 \times  0.3^2 \\
+  &=& 6 \times 0.343 \times  0.09 \\
+&=& 0.18522 \\
+\end{eqnarray*}
+
+\noindent Thus, the probability that Alex will make his third successful free throw on his fifth shot is 0.18522.
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\subsection*{Part (b)}
+ What is the probability that Alex makes his first free throw on his fifth shot?\\
+ \medskip
+
+\noindent This is an example of a geometric distribution, which is a special case of a negative binomial distribution. Therefore, this problem can be solved using the negative binomial formula or the geometric formula. We demonstrate both approaches.
+
+
+\subsection*{Negative Binomial Approach}
+
+The probability of success ($p$) is 0.70, the number of trials ($k$) is 5, and the number of successes ($r$) is 1. 
+
+\begin{eqnarray*}
+P(X=k)  &=&  {k-1 \choose r-1} \times p^r \times (1-p)^{k - r} \\
+ &=&  {4 \choose 0} \times 0.7^1 \times 0.3^{4}\\
+ &=&  0.00567\\
+\end{eqnarray*}
+
+\newpage 
+\subsection*{Geometric Approach}
+We will also demonstrate a solution based on the geometric formula.\\ 
+\noindent (N.B This is the Type I geometric distribution).
+\begin{eqnarray*}
+P(X=k)  &=&   p \times (1-p)^{k - 1}\\
+ &=&  0.7 \times 0.3^4 \\
+  &=&  0.00567\\
+\end{eqnarray*}
+Notice that each approach yields the same answer.
+
+\end{document}

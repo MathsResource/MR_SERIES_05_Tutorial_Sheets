@@ -1,0 +1,218 @@
+\documentclass[]{article}
+\voffset=-1.5cm
+\oddsidemargin=0.0cm
+\textwidth = 470pt
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{framed}
+
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{multicol}
+
+% Some CPSC 259 Sample Exam Questions on Graph Theory (Part 6) Sample Solutions 
+
+% DON’T LOOK AT THESE SOLUTIONS UNTIL YOU’VE MADE AN HONEST ATTEMPT AT ANSWERING THE QUESTIONS YOURSELF. 
+\begin{documet}
+1.
+{3 marks}  
+
+Can a simple graph have 5 vertices and 12 edges?  If so, draw it;  if not, explain why it is not possible to have such a graph. 
+
+ANSWER: In a simple graph, no pair of vertices can have more than one edge between them.  
+In other words, there are no parallel edges. 
+
+For a simple graph, the “densest” graph we can get is one in which every vertex is connected to every other vertex.  
+This is called a complete graph.  
+The maximum number of edges in the complete graph containing 5 vertices is given by K5:  which is C(5, 2) edges = “5 choose 2” edges = 10 edges.  
+Since 12 > 10, it is not possible to have a simple graph with more than 10 edges. 2.
+{6 marks}  
+
+
+Suppose that in a group of 5 people: A, B, C, D, and E, the following pairs of people are acquainted with each other.
+\item A and C
+\item A and D
+\item B and C
+\item C and D
+\item C and E 
+
+a)Draw a graph G to represent this situation. 
+
+b)List the vertex set, and the edge set, using set notation.  
+In other words, show sets V and E for the vertices and edges, respectively, in G = {V, E}. 
+c)Draw an adjacency matrix for G. 
+
+ANSWER: a)One such graph for G is:   A B    C D    E 
+b)For sets V and E, any order to the elements is fine.  
+
+Furthermore, in edge set E, you can specify (A, C) or (C, A);  they mean the same thing. 
+V = {A, B, C, D, E} 
+E = {(A, C), (A, D), (B, C), (C, D), (C, E)} c)
+
+Adjacency matrix (0 = no edge;  1 = edge):         
+A     B     C     D     E     
+A     0     0     1     1     0     
+B     0     0     1     0     0     
+C     1     1     0     1     1     
+D     1     0     1     0     0     
+E     0     0     1     0     0     
+
+3.
+{3 marks}  
+How many more edges are there in the complete graph K7 than in the complete graph K5? 
+ANSWER: C(7, 2) – C(5, 2) = 21 – 10 = 11 
+
+
+
+4.
+{4 marks}  
+
+Given a graph for a tree (with no designated root), briefly describe how a root can be chosen so that the tree has maximum height.  
+Similarly, describe how a root can be chosen so that the tree has minimum height.  
+(Note that path length is described as the number of edges that need to be traversed between two vertices.) 
+ANSWER: For the maximum height, choose either end of the longest path as the root.  
+For the minimum height, choose the vertex at the half-way point of the path. 5.
+
+
+Perform  a  breadth-first  search  of  the  following  graph,  where  E  is  the  starting  node.  In other words, show the output if we issue the call BFS(E).  
+Provide two cases:  (a) Use a counterclockwise ordering from the top (12 o’clock position);  and (b) Use a clockwise ordering from the top. 
+
+https://exams.ubccsss.org/potential/sample_exam_questions_6_soln.pdf
+
+
+
+
+5.5 Exercises 5 
+\newpage
+\begin{enumerate}
+    \item 
+
+1. For the graph shown below, find: 
+(a) all the edges incident with vi; 
+(b) all the vertices adjacent to v3; 
+(c) all the edges adjacent to e2; 
+(d) all the loops; 
+(e) the number of its connected components; 
+(f) deg(v4), deg(v6) and deg(v8); 
+(g) the degree sequence of the graph; 
+(h) all the cycles of lengths 2, 3 and 4 respectively. 
+
+C4 
+V7 
+C9 
+\item 
+ In each of the following cases, either construct a graph with the specified properties or say 
+why it is not possible to do so. 
+\begin{enumerate}[(a)]
+\item  A graph with degree sequence 3, 3, 2,1. 
+\item A simple graph with degree sequence 3, 3, 2, 1, 1. 
+\item A simple graph with degree sequence 4, 3, 2, 1. 
+\item A simple 3-regular graph with 6 vertices. 
+\end{enumerate}
+\item  Say why every graph has an even number of vertices of odd degree. 
+\item Suppose that eight sites are connected in a network. The number of other sites to which each 
+site has a direct connection is given by the following sequence. 
+\[5,3,2,7,1,2,6,4.\] 
+\begin{enumerate}[(a)]
+\item Describe how a communications network such as this can be modelled by a graph, saying 
+what the vertices represent and when two vertices are adjacent. 
+\item  What information about the graph is given by the sequence of numbers above? 
+\item Find how many pairs of sites have a. direct connection between them, giving a brief 
+explanation of your method. 
+\item  Say why it is impossible to construct a network with 9 sites, in which each site has a 
+direct connection to exactly 5 of the other sites. 
+\end{enumerate}
+%%-- CHAPTER 5. INTRODUCTION TO GRAPH THEORY 79 
+
+
+
+\item  Arc the graphs G and H shown below isomorphic? If you think they are isomorphic, label each vertex of H with the same letter as the corresponding vertex in G. Otherwise, give a reason why the two graphs are not isomorphic. 
+
+\item  Draw two simple non-isomorphic graphs with degree sequence 3, 2, 2,1,1, 1. Give a reason why the graphs you have drawn are not isomorphic. 
+
+\item Construct an adjacency matrix A(G) for the graph G shown below. 
+
+\begin{enumerate}[(a)]
+    \item  What inform ation does the sum of the elements in any row of A(G) give you about the graph G? 
+    \item What information does the sum of all the elements in the matrix tell you about G? 
+    \item Would these rules hold in the case of a graph with loops? 
+\end{enumerate}
+\item  Let G be a simple graph with vertex set V (G) = {vi, v2, v3, v4, v5} and adjacency lists as follows: 
+VI • V2 V3 V4 V2 Vl v3 v4 vs 
+vi v.1 v4 vi v2 v3. v5 v2 
+\begin{enumerate}[(a)]
+\item List the degree sequence of G. 
+\item Draw the graph of G. 
+\item Find two distinct paths of length 3, starting at va and ending at v4. 
+\item Find a 4 cycle in G. 
+\end{enumerate}
+
+\item Let Ky, be the simple graph with vertices vZ, v2, v3, ..., i.'3 in which each vertex is joined to every other vertex by an edge. 
+\begin{enumerate}[(a)]
+\item Draw K6. 
+\item Determine the number of edges of K6. 
+\item Determine the number of paths from vi to v2 of length two.
+\item Find an expression in terms of n for the number of paths from vi to v2 of length two in kn.  
+\end{enumerate}
+
+
+\item Write out the degree sequence of the following graph.
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[width=0.5\linewidth]{./graph2.jpg}
+%%\caption{}
+%\label{fig:graph2}
+%\end{figure}
+\item State the vertices that comprise a cycle of length 5 in both of the following graphs.
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[width=0.7\linewidth]{./graph20.jpg}
+%
+%\label{fig:graph20}
+%\end{figure}
+\end{enumerate}
+
+
+
+
+
+\end{document}
+
+
+%%--https://www.tutorialandexample.com/graph-%%--http://www.maths.usyd.edu.au/u/billp/MATH2069/information.htmltheory-trees-in-graph/
+
+\subsection{Question 10}
+
+(a) Given the following adjacency matrices A and B where
+A =
+
+1 0 1
+0 1 2
+1 2 0
+
+,B =
+
+1 2 0
+2 0 1
+0 1 1
+
+%MAKE NO
+
+%--------------------------------------------%
+
+(i) Say whether or not the graphs they represent are isomorphic.
+(ii) Calculate A2 and A4 and say what information each gives about the graph
+corresponding to A. [6]
+
+
+
+%%%--------------------%% %%%--------------------%%
+
+%%%--------------------%% %%%--------------------%%
+
+%%%--------------------%% %%%--------------------%% %%%--------------------%%
+
+%%%--------------------%% %%%--------------------%% %%%------------------------%
+

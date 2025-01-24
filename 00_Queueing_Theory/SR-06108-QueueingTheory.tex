@@ -1,0 +1,86 @@
+
+
+
+%%- http://webpages.iust.ac.ir/matashbar/teaching/schaum_probability.pdf
+
+%%-- PAge 287
+%%-- 9.9
+
+
+
+People arrive at a telephone booth according to a Poisson process at an average rate of 12 per 
+hour, and the average time for each call is an exponential r.v. with mean 2 minutes. 
+
+\begin{enumerate}[(a)]
+    \item  What is the probability that an arriving customer will find the telephone booth occupied? 
+\item It is the policy of the telephone company to install additional booths if customers wait an 
+average of 3 or more minutes for the phone. Find the average arrival rate needed to justify a 
+second booth. 
+\end{enumerate}
+
+\section*{Solution}
+\begin{itemize}
+    \item (a) The telephone service can be modeled as an M/M/1 queueing system with $\lambda = 1/5$, $\mu = 1/2$ and $\rho = \lambda / \mu = 2/5$.
+\item The probability that an arriving customer will find the telephone occupied is $P(L > 0)$, where 
+$L$ is the average number of customers in the system. 
+\item Thus, from Eq. (9.1 3), 
+\end{itemize}
+\[P(L>0) = 1-p_{0} = 1-(1-\rho) = \rho = \frac{2}{5} = 0.4 \]
+\begin{itemize}
+    \item (b) From Eq. (9.1 7), 
+    \[ W_{q} = \frac{\lambda}{\mu(\mu-\lambda)} = \frac{\lambda}{0.5(0.5-\lambda)} \geq 3\]
+from which we obtain $\lambda \geq 0.3$ per minute.
+\item Thus, the required average arrival rate to justify the second 
+booth is 18 per hour.
+\end{itemize}
+
+ 
+
+\end{document}
+Let's address each part of the problem step by step.
+
+### Part (a)
+
+**Given:**
+- Arrival rate, \( \lambda = 12 \) customers per hour
+- Service time is an exponential random variable with mean 2 minutes
+
+We need to convert the service rate to be consistent with the arrival rate:
+- Service rate, \( \mu = \frac{1}{2} \) customers per minute, which is equivalent to \( \mu = 30 \) customers per hour
+
+The traffic intensity \( \rho \) for an M/M/1 queueing system is:
+\[ \rho = \frac{\lambda}{\mu} = \frac{12}{30} = 0.4 \]
+
+The probability that an arriving customer will find the telephone booth occupied is \( P(L > 0) \), where \( L \) is the average number of customers in the system. This probability is:
+\[ P(L > 0) = 1 - p_0 = 1 - (1 - \rho) = \rho = 0.4 \]
+
+So, the probability that an arriving customer will find the telephone booth occupied is \( 0.4 \) or \( 40\% \).
+
+### Part (b)
+
+We need to find the average arrival rate needed to justify installing a second booth, given that customers wait an average of 3 or more minutes for the phone.
+
+**Given:**
+- The average waiting time \( W_q \) should not exceed 3 minutes.
+- Current service rate \( \mu = 30 \) customers per hour.
+
+The waiting time in the queue for an M/M/1 system is given by:
+\[ W_q = \frac{\lambda}{\mu(\mu - \lambda)} \]
+
+We want \( W_q \leq 3 \) minutes. Let's convert 3 minutes to hours:
+\[ 3 \text{ minutes} = \frac{3}{60} \text{ hours} = 0.05 \text{ hours} \]
+
+So:
+\[ 0.05 \geq \frac{\lambda}{30(30 - \lambda)} \]
+
+Solving for \( \lambda \):
+\[ 0.05 \times 30(30 - \lambda) \geq \lambda \]
+\[ 1.5(30 - \lambda) \geq \lambda \]
+\[ 45 - 1.5\lambda \geq \lambda \]
+\[ 45 \geq 2.5\lambda \]
+\[ \lambda \leq \frac{45}{2.5} \]
+\[ \lambda \leq 18 \text{ customers per hour} \]
+
+Thus, the required average arrival rate to justify installing a second booth is 18 customers per hour or more.
+
+Let me know if there's anything else you'd like to explore or clarify!

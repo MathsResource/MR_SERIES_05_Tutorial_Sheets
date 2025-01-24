@@ -1,0 +1,36 @@
+
+
+%%- Log-Logistic
+
+
+%%- https://www.symbolab.com/solver/step-by-step/%5Cint_%7B0%7D%5E%7Bk%7D%5Cfrac%7B%5Cleft(%5Cbeta%20%2F%5Calpha%5Cright)%5Cleft(x%2F%5Calpha%5Cright)%5E%7B%5Cbeta%20-1%7D%7D%7B%5Cleft(1%2B%5Cleft(x%2F%5Calpha%5Cright)%5E%7B%5Cbeta%20%7D%5Cright)%5E%7B2%7D%7D%20dx?or=input
+
+%--------------------------------------------------------------------------------------%
+
+f(x;\alpha ,\beta )={\frac {(\beta /\alpha )(x/\alpha )^{{\beta -1}}}{\left(1+(x/\alpha )^{{\beta }}\right)^{2}}}
+
+\int \frac{(\beta /\alpha )(x/\alpha )^{{\beta -1}}}{\left(1+(x/\alpha )^{{\beta }}\right)^{2}}} dx
+
+
+\int_0^k\frac{\left(\beta \:/\alpha \right)\left(x/\alpha \right)^{\beta \:-1}}{\left(1+\left(x/\alpha \right)^{\beta \:}\right)^2}\:dx
+
+\int_0^k \frac{\left(\frac{β}{\alpha}\right)\left(\frac{x}{\alpha}\right)^{β-1}}{\left(1+\left(\frac{x}{\alpha}\right)^{\beta}\right)^2}dx=-\frac{1}{1+\left(\frac{k}{\alpha}\right)^{\beta}}+1
+
+%%- https://www.symbolab.com/solver/step-by-step/%5Cint_%7B0%7D%5E%7Bk%7D%5Cfrac%7B%5Cleft(%5Cbeta%20%2F%5Calpha%5Cright)%5Cleft(x%2F%5Calpha%5Cright)%5E%7B%5Cbeta%20-1%7D%7D%7B%5Cleft(1%2B%5Cleft(x%2F%5Calpha%5Cright)%5E%7B%5Cbeta%20%7D%5Cright)%5E%7B2%7D%7D%20dx?or=input
+
+%--------------------------------------------------------------------------------------%
+
+1-\frac{1}{1+\left(\frac{k}{\alpha}\right)^{\beta}} &=& 1-\frac{\alpha^{\beta}}{\alpha^{\beta}+k^{\beta}} \\
+
+&=& \frac{\alpha^{\beta}+k^{\beta}}{\alpha^{\beta}+k^{\beta}} -\frac{\alpha^β}{\alpha^β+k^β} \\
+
+&=& \frac{k^{\beta}}{\alpha^{\beta}+k^{\beta}}  \\
+
+
+%--------------------------------------------------------------------------------------%
+
+the beta function, also called the Euler integral of the first kind, is a special function that is closely related to the gamma function and to binomial coefficients. It is defined by the integral
+
+\[{\displaystyle \mathrm {B} (x,y)=\int_{0}^{1}t^{x-1}(1-t)^{y-1}\,dt} \]
+\[{\displaystyle \mathrm {B} (1-x,y+1)=\int_{0}^{1}t^{x-2}(1-t)^{y}\,dt}\]
+\[{\displaystyle \mathrm {B} (1-(a/b),(a/b)+1)=\int_{0}^{1}t^{(a/b)-2}(1-(a/b))^{y}\,dt}\]

@@ -1,0 +1,81 @@
+
+
+\documentclass[a4paper12pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{eurosym}
+\usepackage{vmargin}
+\usepackage{amsmath}
+\usepackage{graphics}
+\usepackage{epsfig}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{subfigure}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{framed}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{chngpage}
+%\usepackage{bigints}
+
+\usepackage{vmargin}
+% left top textwidth textheight headheight
+% headsep footheight footskip
+\setmargins{2.0cm}{2.5cm}{16 cm}{22cm}{0.5cm}{0cm}{1cm}{1cm}
+\renewcommand{\baselinestretch}{1.3}
+
+\setcounter{MaxMatrixCols}{10}
+
+\begin{document}
+\large 
+
+
+%%- http://webpages.iust.ac.ir/matashbar/teaching/schaum_probability.pdf
+
+%%-- PAge 287
+%%-- 9.13
+
+
+A corporate computing center has two computers of the same capacity. The jobs arriving at the 
+center are of two types, internal jobs and external jobs. These jobs have Poisson arrival times 
+with rates 18 and 15 per hour, respectively. The service time for a job is an exponential r.v. with 
+mean 3 minutes. 
+\begin{enumerate}[(a)]
+    \item Find the average waiting time per job when one computer is used exclusively for internal 
+jobs and the other for external jobs. 
+    \item Find the average waiting time per job when two computers handle both types of jobs. 
+\end{enumerate}
+
+
+\section*{Solution}
+
+\subsection*{Part (a)}
+\begin{itemize}
+    \item (a) When the computers are used separately, we treat them as two M/M/1 queueing systems. 
+    
+        \item Let W,, and 
+W,, be the average waiting time per internal job and per external job, respectively. 
+
+    \item For internal jobs, 
+
+A1 = = & and p1 = 3. Then, from Eq. (9.16), 
+- 3 
+10 Wq I = ---- = 27 min 4(4 - 6) 
+    \item For external jobs, 1, = = $ and p2 = 5, and 
+1 
+;I Wq2 = ---- - 9 min +(3 - $1 
+\end{itemize}
+
+
+\subsection*{Part (b)}
+\begin{itemize}
+    \item (b) When two computers handle both types of jobs, we model the computing service as an M/M/2 
+queueing system with 
+\item Now, substituting s = 2 in Eqs. (9.20), (9.22), (9.24), and (9.25), we get 
+\item Thus, from Eq. (9.54), the average waiting time per job when both computers handle both types of jobs 
+is given by 
+2(%) %= mu 11 = 6.39 min - (%)21 
+\item From these results, we see that it is more efficient for both computers to handle both types of jobs.
+\end{itemize}
+
+\end{document}

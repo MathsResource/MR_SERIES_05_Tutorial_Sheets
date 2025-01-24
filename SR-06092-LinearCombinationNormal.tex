@@ -1,0 +1,59 @@
+\documentclass[a4paper,12pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{eurosym}
+\usepackage{vmargin}
+\usepackage{amsmath}
+\usepackage{graphics}
+\usepackage{epsfig}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{subfigure}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{framed}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{chngpage}
+%\usepackage{bigints}
+
+\usepackage{vmargin}
+% left top textwidth textheight headheight
+% headsep footheight footskip
+\setmargins{2.0cm}{2.5cm}{16 cm}{22cm}{0.5cm}{0cm}{1cm}{1cm}
+\renewcommand{\baselinestretch}{1.3}
+
+\setcounter{MaxMatrixCols}{10}
+
+\begin{document}
+\large
+
+
+
+%%- https://online.stat.psu.edu/stat414/lesson/26/26.1
+
+  
+        Example 26-2
+
+History suggests that scores on the Math portion of the Standard Achievement Test (SAT) are normally distributed with a mean of 529 and a variance of 5732. 
+
+History also suggests that scores on the Verbal portion of the SAT are normally distributed with a mean of 474 and a variance of 6368. 
+
+Select two students at random. Let \(X\) denote the first student's Math score, and let \(Y\) denote the second student's Verbal score. What is \(P(X&gt;Y)\)?
+
+
+\subsection*{Solution}
+
+We can find the requested probability by noting that \(P(X&gt;Y)=P(X-Y&gt;0)\), and then taking advantage of what we know about the distribution of \(X-Y\).
+
+That is, \(X-Y\) is normally distributed with a mean of 55 and variance of 12100 as the following calculation illustrates:
+
+<p class="text-align-center">\((X-Y)\sim N(529-474,(1)^2(5732)+(-1)^2(6368))=N(55,12100)\)
+
+Then, finding the probability that \(X\) is greater than \(Y\) reduces to a normal probability calculation:
+
+<p class="text-align-center">\begin{align} P(X&gt;Y) &amp;=P(X-Y&gt;0)\\ &amp;= P\left(Z&gt;\dfrac{0-55}{\sqrt{12100}}\right)\\ &amp;= P\left(Z&gt;-\dfrac{1}{2}\right)=P\left(Z&lt;\dfrac{1}{2}\right)=0.6915\\ \end{align}
+
+That is, the probability that the first student's Math score is greater than the second student's Verbal score is 0.6915.
+
+
+ 

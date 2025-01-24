@@ -1,0 +1,133 @@
+
+
+\documentclass[a4paper12pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{eurosym}
+\usepackage{vmargin}
+\usepackage{amsmath}
+\usepackage{graphics}
+\usepackage{epsfig}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{subfigure}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{framed}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{chngpage}
+%\usepackage{bigints}
+
+\usepackage{vmargin}
+% left top textwidth textheight headheight
+% headsep footheight footskip
+\setmargins{2.0cm}{2.5cm}{16 cm}{22cm}{0.5cm}{0cm}{1cm}{1cm}
+\renewcommand{\baselinestretch}{1.3}
+
+\setcounter{MaxMatrixCols}{10}
+
+\begin{document}
+\large 
+
+%%-- https://www.win.tue.nl/~resing/SOR/eng/college10_09_eng.pdf
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\subsection*{The M/M/s queue}
+\begin{itemize}
+\item  Customers arrive according to a Poisson process with rate $\lambda$ .
+\item  The service times of customers are exponentially distributed with parameter $\mu$ .
+\item  There are $s$ servers, serving customers in order of arrival.
+\end{itemize}
+
+\noindent \textbf{Stability condition:}
+\[\lambda  < s\cdot \mu\]  or alternatively written, 
+\[\rho = \lambda s\cdot \mu < 1.\]
+
+The process $\{X(t), t \geq  0\}$, the number of customers in the system at time
+$t$, is again a continuous-time Markov chain with infinite state space.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Performance measures in the M/M/s queue:}
+\begin{itemize}
+\item probability that a customer has to wait
+\begin{eqnarray*}
+\Pi_{W} 
+&=&\sum^{\infty}_{k=0} p_{s+k} \\
+&=&\sum^{\infty}_{k=0} \left(\lambda s\mu \right)^kp_{s}\\
+&=& \frac{p_s}{1-\rho}\\
+\end{eqnarray*}
+\item expected number of busy servers
+\begin{eqnarray*}
+B &=&\sum^{\infty}_{k=0} min(i, s) pi \\
+&=&\sum^{\infty}_{k=0} \frac{\lambda}{\mu}  p_{i - 1} \\
+&=&\frac{\lambda}{\mu}\\
+\end{eqnarray*}
+\item expected number of waiting customers
+\begin{eqnarray*}
+L_{q} &=& \sum^{\infty}_{k=0}k p_{s+k} \\
+&=& \sum^{\infty}_{k=0} k\left(\lambda s\mu \right)^kp_{s}\\
+&=& pp_{s}\frac{\rho}{(1  -  \rho )^2}\\
+\end{eqnarray*}
+${ \displaystyle W_{q} = \frac{L_{q}}{\lambda}}$ ,\qquad ${ \displaystyle L = L_{q} + B}$,\qquad ${ \displaystyle W = \frac{L}{\lambda } = W_{q} + \frac{1}{\mu} }$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage 
+
+The M/M/s/K queue
+\begin{itemize}
+\item  Customers arrive according to a Poisson process with rate $\lambda$ .
+\item  The service times of customers are exponentially distributed with parameter $\mu$ .
+\item  There are s servers, serving customers in order of arrival.
+\item  Customers who see at arrival K ($K \geq  s$) other customers in the system
+are lost.
+\end{itemize}
+The process ${X(t), t \geq  0}$, the number of customers in the system at time
+$t$, is again a continuous-time Markov chain with state space ${0, 1, . . . , K}$.
+
+The M/M/1/K Queueing System
+
+%%- http://webpages.iust.ac.ir/matashbar/teaching/schaum_probability.pdf
+
+%%-- PAge 287
+%%-- 9.14
+
+\[ \sum^{K}_{n=0} x^{n} = \frac{1-x^{K+1}}{1-x} \] 
+
+
+\begin{framed}
+\begin{itemize}
+\item The average number of customers is denoted $L$
+\item The average amount of time that a customer spends waiting for service is denoted $W_q$
+    \item  The ratio ${\rho = \frac{\lambda}{\mu}}$ is the traffic intensity of the system.
+\end{itemize}
+\end{framed}
+
+\[\sum^{K}_{n=0}P_{n} = 
+\sum^{K}_{n=0}\rho_{n} =1 \]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Solution}
+\subsection*{Part (a)}
+\begin{itemize}
+    \item The watch repair shop service can be modeled as an M/M/1 queueing system with 1 = &, p = 4. 
+    \item Thus, 
+from Eqs. (9.1 5), (9.1 6), and (9.43), we have 
+1 1 w=-=-- - 40 minutes 
+-A Q-iij 
+\[W, = W - W, = 40 - 8 = 32 minutes\]
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Part (b)}
+(b) Now 1 = 4, p = g. Then 
+1 w=- - 1-= 72 minutes 
+p-a +-g 
+W, = W - W, = 72 - 8 = 64 minutes 
+\begin{itemize}
+    \item It can be seen that an increase of 10 percent in the customer arrival rate doubles the average number 
+of customers in the system.
+\item The average time a customer spends in queue is also doubled. 
+\end{itemize}
+
+\end{document}

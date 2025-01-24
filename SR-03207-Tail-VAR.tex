@@ -1,0 +1,43 @@
+
+Suppose that the loss X is a mixture of two distributions represented by the random variables X_1 and X_2, with weights w and 1-w, respectively. Let \pi_p be the 100pth percentile of the loss X, i.e. \pi_p=\text{VaR}_p(X). Then the tail-value-at-risk at the 100p percent security level is:
+\displaystyle \begin{aligned} \text{TVaR}_p(X)&=\pi_p+\frac{1}{1-p} \biggl[w \times P(X_1>\pi_p) \times e_{X_1}(\pi_p)\\&  \ \  +(1-w) \times P(X_2>\pi_p)  \times e_{X_2}(\pi_p)\biggr]  \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (a) \end{aligned}
+The co
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Example 1
+The mean excess loss function of an exponential distribution is constant. Let’s consider the mixture of two exponential distributions. Suppose that losses follow a mixture of two exponential distributions where one distribution has mean 5 (75% weight) and the other has mean 10 (25% weight). Determine the VaR and TVaR at the security level 99%.
+
+First, calculate the 99th percentile of the mixture, which is the solution to the following equation.
+
+\displaystyle 0.75 e^{-x/5}+0.25 e^{-x/10}=1-0.99=0.01
+By letting y=e^{-x/10}, we solve the following equation.
+
+\displaystyle 0.75 y^2+0.25 y-0.01=0
+Use the quadratic formula to solve for y. Then solve for x. The following is the 99th percentile of the loss X.
+
+\displaystyle \pi_p=-10 \times \text{ln} \biggl(\frac{-1+\sqrt{1.48}}{6} \biggr)=33.2168
+The following gives the TVaR.
+
+\displaystyle \begin{aligned} \text{TVaR}_p(X)&=\pi_p+\frac{1}{1-0.99} \biggl[0.75 \times e^{-\pi_p/5} \times 5 +0.25 \times e^{-\pi_p/10} \times 10 \biggr] \\&=42.7283  \end{aligned}
+
+Note that the mean excess loss for the first exponential distribution is 5 and for the second one is 10 (the unconditional means). 
+
+The survival functions P(X_1>\pi_p) and P(X_2>\pi_p) are also easy to evaluate. 
+
+As long as the percentile \pi_p of the mixture is calculated, the formula is very useful. 
+
+In this example, the two exponential parameters are set so that the calculation of percentiles uses the quadratic formula. If the parameters are set differently, then we can use software to evaluate the required percentile.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Deriving the formula
+
+Suppose that X is the mixture of X_1, with weight w, and X_2, with weight 1-w. The density function for X_1 is f_1(x) and the density function for X_2 is f_2(x). 
+
+The density function of X is then f(x)=w f_1(x)+(1-w) f_2(x). We derive from the basic definition of TVaR. Let \pi_p be the 100pth percentile of X.
+
+ \begin{eqnarray*} \text{TVaR}_p(X)&=\frac{\int_{\pi_p}^\infty x f(x) \ dx}{1-p}\\&=\pi_p+\frac{\int_{\pi_p}^\infty (x-\pi_p) f(x) \ dx}{1-p} \\&=\pi_p+\frac{\int_{\pi_p}^\infty (x-\pi_p) (w f_1(x)+(1-w) f_2(x)) \ dx}{1-p} \\&=\pi_p+\frac{1}{1-p} \biggl[w \int_{\pi_p}^\infty (x-\pi_p) f_1(x) \ dx +(1-w) \int_{\pi_p}^\infty (x-\pi_p) f_2(x) \ dx\biggr] \\&=\pi_p+\frac{1}{1-p} \biggl[w \   P(X_1>\pi_p) \ \frac{\int_{\pi_p}^\infty (x-\pi_p) f_1(x) \ dx}{P(X_1>\pi_p)}\\& \ \  +(1-w) \ P(X_2>\pi_p) \ \frac{\int_{\pi_p}^\infty (x-\pi_p) f_2(x) \ dx}{P(X_2>\pi_p)} \biggr] \\&=\pi_p+\frac{1}{1-p} \biggl[w \   P(X_1>\pi_p) \ e_{X_1}(\pi_p) +(1-w) \ P(X_2>\pi_p) \ e_{X_2}(\pi_p) \biggr] \end{eqnarray*}
+The formula derived here is for mixtures for two distributions. It is straightforward to extend it for mixtures of any finite-mixture.
+
+\end{document}

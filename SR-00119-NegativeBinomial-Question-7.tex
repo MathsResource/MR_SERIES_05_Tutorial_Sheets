@@ -1,0 +1,104 @@
+
+\documentclass[a4paper,12pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{eurosym}
+\usepackage{vmargin}
+\usepackage{amsmath}
+\usepackage{graphics}
+\usepackage{epsfig}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{subfigure}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{framed}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{chngpage}
+%\usepackage{bigints}
+
+\usepackage{vmargin}
+% left top textwidth textheight headheight
+% headsep footheight footskip
+\setmargins{2.0cm}{2.5cm}{16 cm}{22cm}{0.5cm}{0cm}{1cm}{1cm}
+\renewcommand{\baselinestretch}{1.3}
+
+\setcounter{MaxMatrixCols}{10}
+
+\begin{document}
+\large
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%- Practice Problem 6G
+\noindent The number of losses in a year for one insurance policy is the random variable $X$ where $X=0,1,2,\cdots.$ The random variable $X$ is modeled by a geometric distribution with mean 0.4 and variance 0.56.
+\begin{enumerate}[(a)]
+    \item What is the probability that the total number of losses in a year for three randomly selected insurance policies is 2 or 3?
+\end{enumerate}
+
+
+\medskip
+%%6G	\displaystyle \frac{31000}{117649}
+\begin{framed}
+\noindent The geometric distribution is a special case of the negative binomial distribution. The sum of several independent geometric random variables with the same success probability is a negative binomial random variable.\\
+\medskip
+
+
+\noindent The geometric distribution Y is a special case of the negative binomial distribution, with $r = 1$. 
+
+\noindent More generally, if $Y_1, \cdots, Y_r$ are independent geometrically distributed variables with parameter p, then the sum
+\[ {\displaystyle Z=\sum _{m=1}^{r}Y_{m}}\]
+follows a negative binomial distribution with parameters $r$ and $p$.
+\end{framed}
+\newpage 
+\begin{framed}
+\noindent \textbf{Probability Mass Function}
+
+\noindent The probability mass function of the negative binomial distribution is
+\[
+{\displaystyle f(k;r,p)\equiv \Pr(X=k)={k+r-1 \choose k}\cdot (1-p)^{r}p^{k},}\]
+\end{framed}
+
+
+
+\begin{eqnarray*}
+P(X=k)&=&{k+3-1 \choose k}\cdot(1-5/7)^{2}\cdot(5/7)^{k}\\
+&=&{k+2 \choose k}\cdot (5/7)^{3}\cdot (5/7)^{k}\\
+& & \\
+& & \\
+P(X=2) &=&{4 \choose 2}\cdot (2/7)^{3}\cdot (2/7)^{2}\\
+& & \\ 
+&=& 6\cdot \frac{8}{343}\cdot \frac{4}{49}\ \ = \ \ 6\cdot \frac{125}{343}\cdot \frac{28}{343}\\
+& & \\ 
+&=& \frac{2100}{117649}\\
+& & \\
+&=& 0.17849\\
+\end{eqnarray*}
+\begin{eqnarray*}
+P(X=3) &=&{5 \choose 3}\cdot (5/7)^{3}\cdot (2/7)^{3}\\
+& & \\ 
+&=& 10\cdot \frac{125}{343}\cdot \frac{8}{343}\\
+& & \\ 
+&=& \frac{10000}{117649}\\
+& & \\
+&=& 0.084998\\
+\end{eqnarray*}
+
+%%%%%%%%%%%%%%%%%%%%%%%5555
+\newpage 
+\begin{verbatim}
+> P2 <- dnbinom(2,size=3,prob = 5/7) 
+> P2
+[1] 0.17849
+>
+> P3 <- dnbinom(3,size=3,prob = 5/7) 
+> P3
+[1] 0.084998
+>
+> P2+P3
+[1] 0.2634957
+\end{verbatim}
+\end{document}
+
+%%%- https://actuarialmodelingpractice.wordpress.com/2017/11/11/practice-problem-set-6-negative-binomial-distribution/
