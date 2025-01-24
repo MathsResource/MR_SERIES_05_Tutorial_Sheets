@@ -1,0 +1,49 @@
+
+
+\usepackage{vmargin}
+% left top textwidth textheight headheight
+% headsep footheight footskip
+\setmargins{2.0cm}{2.5cm}{16 cm}{22cm}{0.5cm}{0cm}{1cm}{1cm}
+\renewcommand{\baselinestretch}{1.3}
+
+\setcounter{MaxMatrixCols}{10}
+
+\begin{document}
+\large
+
+%%-- http://sites.science.oregonstate.edu/~kovchegy/math563fall2013/SolHW4.pdf
+
+%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent If $Y$ is an exponential random variable with parameter $\lambda  = 3$, what is the probability
+that the roots of the equation
+\[4x^2 + 4xY - Y + 6 = 0\]
+are real?
+
+\begin{framed}
+\noindent \textbf{Exponential random variables }
+\begin{center}
+\begin{tabular}{lc}
+Parameters &	${\displaystyle \lambda >0,}$ rate, or inverse scale\\
+Support& $	{\displaystyle x\in [0,\infty )}$\\ 
+PDF	&$ {\displaystyle \lambda e^{-\lambda x}}$\\ 
+CDF	& ${\displaystyle 1-e^{-\lambda x}}$\\ 
+Quantile	& ${\displaystyle -{\frac {\ln(1-p)}{\lambda }}}$\\ 
+\end{tabular}
+\end{center}
+\end{framed}
+\subsection*{Solution} The roots $\{x_1,x_2\} =$
+\[\frac{-4Y \pm \sqrt{16Y^2+16(Y -6)}}{8}\]
+are real if and only if
+\[16Y^2 + 16(Y - 6) \geq  0\]
+\[Y^2 + Y - 6 \geq  0\]
+So we need to find probability this
+\begin{eqnarray*}
+P(16Y^2 + 16(Y - 6) \geq  0) 
+&=& P(Y^2 + Y - 6 \geq  0) \\
+& & \\ &=& P((Y + 3) \cdot (Y - 2) \geq  0)\\
+& & \\ &=& P(Y  \leq  -3) + P(Y \geq  2) \\
+& & \\ &=& 0 + e^{-\lambda 2} \\
+& & \\ &=& e^{-6} = 0.00247\\
+\end{eqnarray*}
+\end{document}
